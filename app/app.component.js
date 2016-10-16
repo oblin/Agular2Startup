@@ -25,7 +25,7 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'pm-app',
-                        template: "Starter files for Angular2: Getting Started."
+                        template: "\n        <div><h1>{{ pageTitle }}</h1>\n            <div>My First Component</div>\n        </div>\n    "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);

@@ -2,7 +2,11 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'pm-app',
-    template: "Starter files for Angular2: Getting Started."
+    template: `
+        <div><h1>{{ pageTitle }}</h1>
+            <div>My First Component</div>
+        </div>
+    `
     // template: `
     // <div>
     //     <nav class='navbar navbar-default'>
