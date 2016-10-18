@@ -1,4 +1,4 @@
-System.register(['@angular/core', '@angular/platform-browser', '@angular/forms', './app.component', './products/product-list.component', './products/product-filter.pipe'], function(exports_1, context_1) {
+System.register(['@angular/core', '@angular/platform-browser', '@angular/forms', './app.component', './products/product-list.component', './products/product-filter.pipe', './shared/star.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['@angular/core', '@angular/platform-browser', '@angular/forms',
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, platform_browser_1, forms_1, app_component_1, product_list_component_1, product_filter_pipe_1;
+    var core_1, platform_browser_1, forms_1, app_component_1, product_list_component_1, product_filter_pipe_1, star_component_1;
     var AppModule;
     return {
         setters:[
@@ -31,6 +31,9 @@ System.register(['@angular/core', '@angular/platform-browser', '@angular/forms',
             },
             function (product_filter_pipe_1_1) {
                 product_filter_pipe_1 = product_filter_pipe_1_1;
+            },
+            function (star_component_1_1) {
+                star_component_1 = star_component_1_1;
             }],
         execute: function() {
             /* Feature Modules */
@@ -45,7 +48,8 @@ System.register(['@angular/core', '@angular/platform-browser', '@angular/forms',
                         declarations: [
                             app_component_1.AppComponent,
                             product_list_component_1.ProductListComponent,
-                            product_filter_pipe_1.ProductFilterPipe
+                            product_filter_pipe_1.ProductFilterPipe,
+                            star_component_1.StarComponent
                         ],
                         bootstrap: [app_component_1.AppComponent]
                     }), 
