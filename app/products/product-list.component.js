@@ -1,4 +1,4 @@
-System.register(['@angular/core'], function(exports_1, context_1) {
+System.register(['@angular/core', './product.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,49 +10,30 @@ System.register(['@angular/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
+    var core_1, product_service_1;
     var ProductListComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (product_service_1_1) {
+                product_service_1 = product_service_1_1;
             }],
         execute: function() {
             ProductListComponent = (function () {
-                function ProductListComponent() {
+                function ProductListComponent(_productService) {
+                    this._productService = _productService;
                     this.pageTitle = "Product List";
                     this.imageWidth = 50;
                     this.imageMargin = 2;
                     this.showImage = false;
-                    this.listFilter = "cart";
-                    this.products = [
-                        {
-                            "productId": 2,
-                            "productName": "Garden Cart",
-                            "productCode": "GDN-0023",
-                            "releaseDate": "March 18, 2016",
-                            "description": "15 gallon capacity rolling garden cart",
-                            "price": 32.99,
-                            "starRating": 4.2,
-                            "imageUrl": "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
-                        },
-                        {
-                            "productId": 5,
-                            "productName": "Hammer",
-                            "productCode": "TBX-0048",
-                            "releaseDate": "May 21, 2016",
-                            "description": "Curved claw steel hammer",
-                            "price": 8.9,
-                            "starRating": 4.8,
-                            "imageUrl": "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
-                        }
-                    ];
                 }
+                ProductListComponent.prototype.ngOnInit = function () {
+                    this.products = this._productService.getProducts();
+                };
                 ProductListComponent.prototype.toggleImage = function () {
                     this.showImage = !this.showImage;
-                };
-                ProductListComponent.prototype.ngOnInit = function () {
-                    console.log('ngOnInit...');
                 };
                 ProductListComponent.prototype.onRatingClick = function (message) {
                     this.pageTitle = "Product List: " + message;
@@ -63,7 +44,7 @@ System.register(['@angular/core'], function(exports_1, context_1) {
                         templateUrl: 'app/products/product-list.component.html',
                         styleUrls: ['app/products/product-list.component.css']
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [product_service_1.ProductService])
                 ], ProductListComponent);
                 return ProductListComponent;
             }());

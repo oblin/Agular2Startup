@@ -21,8 +21,7 @@ System.register(['@angular/core'], function(exports_1, context_1) {
             ProductFilterPipe = (function () {
                 function ProductFilterPipe() {
                 }
-                ProductFilterPipe.prototype.transform = function (value, args) {
-                    var filter = args[0] ? args[0].toLocaleLowerCase() : null;
+                ProductFilterPipe.prototype.transform = function (value, filter) {
                     return filter ? value.filter(function (product) {
                         return product.productName.toLocaleLowerCase().indexOf(filter) != -1;
                     }) : value;
