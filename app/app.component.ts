@@ -1,5 +1,7 @@
+// app.component.ts
 import { Component } from '@angular/core';
 import { ProductService } from './products/product.service'
+import './rxjs-operators';
 
 @Component({
     selector: 'pm-app',
