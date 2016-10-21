@@ -1,4 +1,4 @@
-System.register(['@angular/core', '@angular/platform-browser', '@angular/forms', '@angular/http', './app.component', './products/product-list.component', './products/product-filter.pipe', './shared/star.component'], function(exports_1, context_1) {
+System.register(['@angular/core', '@angular/platform-browser', '@angular/forms', '@angular/http', './app.component', './home/welcome.component', './products/product-list.component', './products/product-detail.component', './products/product-filter.pipe', './shared/star.component', '@angular/router'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['@angular/core', '@angular/platform-browser', '@angular/forms',
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, platform_browser_1, forms_1, http_1, app_component_1, product_list_component_1, product_filter_pipe_1, star_component_1;
+    var core_1, platform_browser_1, forms_1, http_1, app_component_1, welcome_component_1, product_list_component_1, product_detail_component_1, product_filter_pipe_1, star_component_1, router_1;
     var AppModule;
     return {
         setters:[
@@ -29,14 +29,23 @@ System.register(['@angular/core', '@angular/platform-browser', '@angular/forms',
             function (app_component_1_1) {
                 app_component_1 = app_component_1_1;
             },
+            function (welcome_component_1_1) {
+                welcome_component_1 = welcome_component_1_1;
+            },
             function (product_list_component_1_1) {
                 product_list_component_1 = product_list_component_1_1;
+            },
+            function (product_detail_component_1_1) {
+                product_detail_component_1 = product_detail_component_1_1;
             },
             function (product_filter_pipe_1_1) {
                 product_filter_pipe_1 = product_filter_pipe_1_1;
             },
             function (star_component_1_1) {
                 star_component_1 = star_component_1_1;
+            },
+            function (router_1_1) {
+                router_1 = router_1_1;
             }],
         execute: function() {
             /* Feature Modules */
@@ -46,11 +55,19 @@ System.register(['@angular/core', '@angular/platform-browser', '@angular/forms',
                 AppModule = __decorate([
                     core_1.NgModule({
                         imports: [
-                            platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule
+                            platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule,
+                            router_1.RouterModule.forRoot([
+                                { path: "", component: welcome_component_1.WelcomeComponent },
+                                { path: "welcome", component: welcome_component_1.WelcomeComponent },
+                                { path: "products", component: product_list_component_1.ProductListComponent },
+                                { path: "product/:id", component: product_detail_component_1.ProductDetailComponent }
+                            ])
                         ],
                         declarations: [
                             app_component_1.AppComponent,
+                            welcome_component_1.WelcomeComponent,
                             product_list_component_1.ProductListComponent,
+                            product_detail_component_1.ProductDetailComponent,
                             product_filter_pipe_1.ProductFilterPipe,
                             star_component_1.StarComponent
                         ],

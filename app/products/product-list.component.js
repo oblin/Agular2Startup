@@ -42,7 +42,6 @@ System.register(['@angular/core', './product.service'], function(exports_1, cont
                 };
                 ProductListComponent = __decorate([
                     core_1.Component({
-                        selector: 'pm-products',
                         templateUrl: 'app/products/product-list.component.html',
                         styleUrls: ['app/products/product-list.component.css']
                     }), 
